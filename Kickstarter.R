@@ -19,8 +19,8 @@ ui <- dashboardPage(
    sidebarMenu(
       menuItem("Project list", tabName = "project", icon = icon("table"), selected = TRUE),
       menuItem("Linear regression", tabName = "lr", icon = icon("line-chart")),
-      menuItem("Source code", tabName = "code", icon = icon("file-code-o"),
-               href = "https://github.com/jessicatowne/RShiny/blob/master/Kickstarter.R")
+      menuItem("Source code", icon = icon("file-code-o"),
+               href = "https://github.com/jessicatowne/RShiny/blob/master/Kickstarter.R/")
  )),
 
 dashboardBody(
@@ -109,7 +109,7 @@ server <- function(input, output) {
     plot <- ggplot(kickstarter, aes_string(x = input$outcome,
                                            y = input$indepvar,
                                            color = kickstarter$Outcome)) +
-                   geom_point() +
+                   geom_point(alpha = 0.6) +
                    geom_smooth(method = lm) +
                    theme_bw() +
                    theme(legend.title = element_blank())
