@@ -19,7 +19,8 @@ ui <- dashboardPage(
    sidebarMenu(
       menuItem("Project list", tabName = "project", icon = icon("table"), selected = TRUE),
       menuItem("Linear regression", tabName = "lr", icon = icon("line-chart")),
-      menuItem("Source code", tabName = "code", icon = icon("file-code-o"))
+      menuItem("Source code", tabName = "code", icon = icon("file-code-o"),
+               href = "https://github.com/jessicatowne/RShiny/blob/master/Kickstarter.R")
  )),
 
 dashboardBody(
